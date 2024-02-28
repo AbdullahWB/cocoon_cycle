@@ -85,6 +85,7 @@ nav {
     display: flex;
     line-height: 75px;
     justify-content: space-around;
+    width: 80%;
 }
 #nav .nav-bg ul li a{
     font-size: 16px;
@@ -103,9 +104,33 @@ nav {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-#nav .nav-bg ul li a:hover{
+/* #nav .nav-bg{
+    display: flex;
+} */
+#nav .nav-bg ul li:hover a{
     background-color: var(--paragraph-color);
     color: var(--main-color);
+}
+#nav .nav-bg{
+    display: flex;
+    justify-content: space-between;
+}
+#nav .nav-bg button{
+    padding: 2px 15px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background-color: var(--paragraph-color);
+    cursor: pointer;
+
+}
+#nav .nav-bg button a{
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: var(--paragraph-size);
 }
 #nav .logo-bg{
     width: 20%;
