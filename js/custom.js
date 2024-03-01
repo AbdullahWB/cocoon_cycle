@@ -17,3 +17,16 @@ function changeBg(bg, title) {
   });
 }
 
+// filtaring
+var mixer = mixitup('.gallery-part');
+// gallery active class js
+$('.gallery-menu ul li').click(function() {
+    $(this).addClass('activ').siblings().removeClass('activ');
+});
+//veno box pop up
+$('.venobox').venobox({
+    numeration: true,
+    infinigall: true,
+    share: true,
+});
+
