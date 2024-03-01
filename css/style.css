@@ -8,7 +8,8 @@ root part
   --heading-color: #adbc9f;
   --paragraph-color: #fbfada;
   --hover-color: hsla(0, 0%, 0%, 0.2);
-  --slider-hover:hsla(0, 0%, 0%, 0.50);
+  --slider-hover: hsla(0, 0%, 0%, 0.5);
+  --gallery-hover:hsla(159, 52%, 14%, 0.796);
   --main-font: "Open Sans", sans-serif;
   --secondary-font: "Oswald", sans-serif;
   --hading-size: 36px;
@@ -61,12 +62,17 @@ nav bar
 nav {
   width: 100%;
   height: 100px !important;
-  line-height: 0px !important;  
+  line-height: 0px !important;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
-  background-color: hsla(0, 0%, 95%, 0.15) !important;
+  background-color: hsla(0, 0%, 0%, 0.50) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: all linear 0.5;
+  -moz-backdrop-filter: all linear 0.5;
+  -ms-backdrop-filter: all linear 0.5;
+  -o-backdrop-filter: all linear 0.5;
 }
 
 #nav {
@@ -322,7 +328,7 @@ banner
   .explore-new
   .search-item
   input[type="text"] {
-  padding: 10px 200px; 
+  padding: 10px 200px;
   width: calc(100% - 200px);
 }
 
@@ -332,7 +338,7 @@ banner
 /* =============
 content
 ============== */
-#content-bg{
+#content-bg {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -340,7 +346,7 @@ content
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: url('../images/sericulture/88d63cfd7d41e824247fc8ee5879c967.jpg') no-repeat;
+  background: url("../images/background/bg3.png") no-repeat;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -352,7 +358,7 @@ content
   -o-transition: 0.5s;
   z-index: 1;
 }
-#content-bg::after{
+#content-bg::after {
   content: "";
   background: var(--slider-hover);
   width: 100%;
@@ -362,7 +368,7 @@ content
   left: 0px;
   z-index: -1;
 }
-#content-bg .content{
+#content-bg .content {
   position: relative;
   max-width: 550px;
   display: none;
@@ -379,7 +385,7 @@ content
   -ms-transition: 0.5;
   -o-transition: 0.5;
 }
-#content-bg .active{
+#content-bg .active {
   display: block;
   visibility: visible;
   transform: scale(1);
@@ -393,26 +399,26 @@ content
   -ms-transition: 0.5;
   -o-transition: 0.5;
 }
-#content-bg .content .content-title{
+#content-bg .content .content-title {
   max-width: 250px;
 }
-#content-bg .content h4{
+#content-bg .content h4 {
   color: var(--heading-color);
   font-weight: 400;
   font-family: var(--main-font);
   font-size: var(--secondary-font);
 }
-#content-bg .content h4 span{
+#content-bg .content h4 span {
   padding: 0 10px;
   border-right: 1px solid var(--heading-color);
 }
-#content-bg .content h4 span:first-child{
+#content-bg .content h4 span:first-child {
   padding-right: 0;
 }
-#content-bg .content h4 span:last-child{
+#content-bg .content h4 span:last-child {
   border-right: none;
 }
-#content-bg .content h4 span i{
+#content-bg .content h4 span i {
   background: var(--main-color);
   color: var(--paragraph-color);
   padding: 0 8px;
@@ -423,7 +429,7 @@ content
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
 }
-#content-bg .content p{
+#content-bg .content p {
   font-size: var(--paragraph-size);
   font-family: var(--secondary-font);
   font-weight: 400;
@@ -431,10 +437,10 @@ content
   margin: 10px 0 20px;
   color: var(--paragraph-color);
 }
-#content-bg .content .button{
+#content-bg .content .button {
   position: relative;
 }
-#content-bg .content .button a{
+#content-bg .content .button a {
   position: relative;
   display: inline-block;
   margin-right: 10px;
@@ -446,34 +452,34 @@ content
   font-family: var(--main-font);
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: 0,5;
-  -webkit-transition: 0,5;
-  -moz-transition: 0,5;
-  -ms-transition: 0,5;
-  -o-transition: 0,5;
+  transition: 0, 5;
+  -webkit-transition: 0, 5;
+  -moz-transition: 0, 5;
+  -ms-transition: 0, 5;
+  -o-transition: 0, 5;
   cursor: pointer;
 }
-#content-bg .content .button a:nth-child(2){
-  background: rgba(0,0,0,0.5);
-  border:1px solid rgba(255,255,255,0.2);
+#content-bg .content .button a:nth-child(2) {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all linear 0.5;
   -webkit-transition: all linear 0.5;
   -moz-transition: all linear 0.5;
   -ms-transition: all linear 0.5;
   -o-transition: all linear 0.5;
 }
-#content-bg .content .button a:hover:nth-child(2){
+#content-bg .content .button a:hover:nth-child(2) {
   background: var(--main-color);
 }
-#content-bg .carousel-box{
+#content-bg .carousel-box {
   position: relative;
   min-width: 950px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.2);
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: all linear 0.5;
   -moz-backdrop-filter: all linear 0.5;
@@ -485,31 +491,31 @@ content
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-#content-bg .carousel-box .carousel{
+#content-bg .carousel-box .carousel {
   position: relative;
   height: 550px;
   perspective: 1500;
 }
-#content-bg .carousel-box .carousel .carousel-item{
+#content-bg .carousel-box .carousel .carousel-item {
   width: 250px;
   cursor: pointer;
 }
-#content-bg .carousel-box .carousel .carousel-item img{
+#content-bg .carousel-box .carousel .carousel-item img {
   max-width: 235px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  transform: translateX(8px)  translateY(-100px);
-  -webkit-transform: translateX(8px)  translateY(-100px);
-  -moz-transform: translateX(8px)  translateY(-100px);
-  -ms-transform: translateX(8px)  translateY(-100px);
-  -o-transform: translateX(8px)  translateY(-100px);
+  transform: translateX(8px) translateY(-100px);
+  -webkit-transform: translateX(8px) translateY(-100px);
+  -moz-transform: translateX(8px) translateY(-100px);
+  -ms-transform: translateX(8px) translateY(-100px);
+  -o-transform: translateX(8px) translateY(-100px);
   object-fit: cover;
   object-position: center;
 }
-#content-bg .carousel-box .paly{
+/* #content-bg .carousel-box .paly{
   position: absolute;
   bottom: 50px;
   left: 100px;
@@ -530,11 +536,97 @@ content
   -ms-transition: all linear 0.3s;
   -o-transition: all linear 0.3s;
 }
-#content-bg .carousel-box .paly i{
+#content-bg .paly i{
   margin-right: 10px;
   font-size: 40px;
   cursor: pointer !important;
-}
+} */
 /* =============
 content
 ============== */
+/* =============
+gallery-item
+=============== */
+.gallery-bg {
+  /* width: 100%; */
+  height: 100vh;
+}
+.gallery-bg header {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-bg header h1{
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: var(--hading-size);
+  color: var(--main-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.gallery-bg header p{
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  padding: 0 200px;
+  color: var(--heading-color);
+  font-size: 12px;
+  text-transform: capitalize;
+  margin-bottom: 50px;
+}
+.gallery-bg .gallery-item {
+  width: 25%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-bg .gallery-item img {
+  width: 100%;
+}
+
+.gallery-bg .gallery-item .gallery-overlay {
+  width: 100%;
+  height: 100%;
+  background: var(--gallery-hover);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  transition: all linear 0.4px;
+  -moz-transition: all linear 0.4s;
+  -o-transition: all linear 0.4s;
+  -ms-transition: all linear 0.4s;
+  -webkit-transition: all linear 0.4s;
+}
+
+.gallery-bg .gallery-item:hover .gallery-overlay {
+  top: 0;
+  left: 0;
+}
+
+.gallery-bg .gallery-item .gallery-overlay .gallery-text {
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-bg .gallery-item .gallery-overlay h3 {
+  text-transform: uppercase;
+  font-family: var(--main-font);
+  font-size: 14px;
+}
+
+.gallery-bg .gallery-item .gallery-overlay p {
+  text-transform: capitalize;
+  font-family: var(--secondary-font);
+  padding-top: 10px;
+  font-size: 14px;
+}
+/* =============
+gallery-item
+=============== */
